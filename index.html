@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Will Curran – Mechanical Engineering Portfolio</title>
+  <meta name="description" content="Portfolio website for Will Curran, Mechanical Engineering student at UMass Lowell: projects, skills, and contact." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #0b1226;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #60a5fa;
+      --accent-2: #38bdf8;
+      --card: #111826;
+      --ring: rgba(96,165,250,.35);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1000px 800px at 80% -10%, rgba(56,189,248,.08), transparent),
+                  radial-gradient(800px 600px at -10% 20%, rgba(96,165,250,.10), transparent),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    header { position: sticky; top: 0; backdrop-filter: saturate(1.4) blur(6px); background: rgba(15,23,42,.6); border-bottom: 1px solid rgba(148,163,184,.15); z-index: 20; }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .brand { font-weight: 700; letter-spacing: .2px; }
+    .brand small { display:block; font-weight: 400; color: var(--muted); font-size: .85rem; margin-top: -2px; }
+    nav a { color: var(--text); text-decoration: none; padding: 8px 12px; border-radius: 10px; font-weight: 500; }
+    nav a:hover { background: rgba(148,163,184,.12); }
+
+    .menu { display:flex; gap: 8px; align-items:center; }
+
+    .hero { padding: 64px 0 24px; display:grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: center; }
+    .hero h1 { font-size: clamp(2rem, 3.5vw + .5rem, 3rem); line-height: 1.2; margin: 0 0 12px; }
+    .hero p.lead { font-size: clamp(1rem, 1.3vw + .5rem, 1.2rem); color: var(--muted); margin: 0 0 16px; }
+    .hero .tags { display:flex; flex-wrap:wrap; gap:10px; margin: 10px 0 0; }
+    .tag { border: 1px solid rgba(148,163,184,.25); color: var(--text); padding: 6px 10px; border-radius: 999px; font-size: .9rem; background: linear-gradient(180deg, rgba(148,163,184,.10), rgba(148,163,184,.06)); }
+
+    .cta { display:flex; gap: 12px; margin-top: 16px; }
+    .btn { display:inline-flex; align-items:center; gap:8px; background: linear-gradient(180deg, var(--accent), var(--accent-2)); color: #06121f; font-weight: 700; border: none; padding: 10px 14px; border-radius: 12px; text-decoration: none; box-shadow: 0 10px 30px -12px var(--ring);
+      transition: transform .12s ease, filter .12s ease; }
+    .btn:hover { transform: translateY(-1px); filter: brightness(1.03); }
+    .btn.secondary { background: transparent; border:1px solid rgba(148,163,184,.35); color: var(--text); box-shadow: none; }
+
+    section { padding: 36px 0; }
+    h2 { font-size: clamp(1.2rem, 1.8vw + .6rem, 1.8rem); margin: 0 0 12px; }
+    .subtle { color: var(--muted); margin-top: 0; }
+
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+    .card { grid-column: span 12; background: linear-gradient(180deg, rgba(2,6,23,.65), rgba(2,6,23,.9)); border: 1px solid rgba(148,163,184,.18); border-radius: 16px; padding: 18px; box-shadow: 0 10px 35px -30px black; transition: border-color .12s ease, transform .12s ease; }
+    .card:hover { border-color: rgba(96,165,250,.5); transform: translateY(-1px); }
+    .card h3 { margin: 0 0 6px; font-size: 1.15rem; }
+    .card p { margin: 0 0 10px; color: var(--muted); }
+    .meta { display:flex; gap:10px; flex-wrap:wrap; margin-top: 8px; }
+    .meta span { font-size: .85rem; color: #8fb7ff; background: rgba(96,165,250,.08); border: 1px dashed rgba(96,165,250,.35); padding: 4px 8px; border-radius: 999px; }
+
+    @media (min-width: 720px) {
+      .card.span-6 { grid-column: span 6; }
+      .card.span-4 { grid-column: span 4; }
+    }
+
+    footer { border-top: 1px solid rgba(148,163,184,.15); padding: 24px 0 48px; color: var(--muted); }
+
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; }
+    }
+
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; border-radius: 8px; }
+
+    .dot { width:10px; height:10px; border-radius:50%; background: linear-gradient(180deg, var(--accent), var(--accent-2)); display:inline-block; box-shadow: 0 0 20px var(--ring) inset, 0 0 20px var(--ring); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        Will Curran
+        <small>Mechanical Engineering @ UMass Lowell</small>
+      </div>
+      <nav class="menu" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="hero" id="top">
+      <div>
+        <h1><span class="dot" aria-hidden="true"></span> Hi, I’m Will — I design, build, and test mechanical systems.</h1>
+        <p class="lead">I’m a Mechanical Engineering student focused on robotics, CAD (SolidWorks), CNC machining, and hands‑on prototyping. I care about clean design, tolerances that actually work, and experiments that match the math.</p>
+        <div class="tags">
+          <span class="tag">SolidWorks</span>
+          <span class="tag">MATLAB</span>
+          <span class="tag">CNC | 3D Printing</span>
+          <span class="tag">Mechanics & Materials</span>
+          <span class="tag">Controls (intro)</span>
+        </div>
+        <div class="cta">
+          <a class="btn" href="#projects">See Projects</a>
+          <a class="btn secondary" href="#contact">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <p class="subtle">A few builds and studies I’m proud of. Most started in CAD, iterated through prototypes, and ended with data that tells a story.</p>
+      <div class="grid">
+        <article class="card span-6">
+          <h3>Robotic Arm (Servo‑Driven)</h3>
+          <p>Designed a 3‑DOF arm with modular end‑effector. Focused on clearances, mass properties, and cable routing; validated range of motion and torque limits.</p>
+          <div class="meta"><span>SolidWorks</span><span>Servo Control</span><span>Prototyping</span></div>
+        </article>
+        <article class="card span-6">
+          <h3>CNC End‑Effector Gripper</h3>
+          <p>3D‑printed gripper for small‑part handling. Tuned grip force vs. deformation; iterated jaw geometry for repeatability and easy maintenance.</p>
+          <div class="meta"><span>3D Print</span><span>Tolerances</span><span>Test Rigs</span></div>
+        </article>
+      </div>
+    </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <p class="subtle">Hands‑on and analytical skills I’m growing through coursework, labs, and personal builds.</p>
+      <div class="grid">
+        <div class="card span-6">
+          <h3>Design & Fabrication</h3>
+          <p>SolidWorks (assemblies, drawings), tolerancing, basic GD&amp;T, 3D printing (FDM), shop safety, fastening & fits, basic CNC workflows.</p>
+        </div>
+        <div class="card span-6">
+          <h3>Analysis & Tools</h3>
+          <p>MATLAB, basic Python, ANSYS Mechanical, Excel for data analysis/plots, error analysis, free‑body diagrams.</p>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <h2>About</h2>
+      <p>I’m an engineering student at UMass Lowell who likes turning sketches into hardware. I’m especially interested in mechanisms, control of simple robotic systems, and making sure the measurements line up with theory. I’m currently looking for ways to grow through internships, co‑ops, and collaborative projects.</p>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="subtle">Want to chat about a project, internship, or idea? Reach out:</p>
+      <div class="grid">
+        <div class="card span-6">
+          <h3>Email</h3>
+          <p><a href="mailto:willrcurran10@example.com" style="color: var(--accent); text-decoration: none;">willrcurran10@example.com</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <small>© <span id="year"></span> Will Curran. Built with semantic HTML & vanilla CSS.</small>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
