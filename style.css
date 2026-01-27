@@ -35,10 +35,9 @@ h4 {
 }
 
 img, video, iframe {
-  max-width: 100%;
-  border-radius: 12px;
-  display: block;
-  margin-top: 10px;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 10px;
 }
 
 a { color: inherit; }
