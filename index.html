@@ -21,79 +21,110 @@
       <h3>Hand Tracking Robot</h3>
 
       <h4>Overview</h4>
-      <!-- Write overview text here -->
+      Two-axis pan/tilt system that tracks hand position using a camera and Arduino-controlled servos. Hand coordinates are mapped to angular commands to drive real-time motion.
 
       <h4>Engineering / Design</h4>
-      <!-- Write engineering details here -->
+      Pan/tilt mount and brackets were designed in CAD and 3D printed with focus on stiffness, alignment, and servo mounting geometry. Control logic converts image-space coordinates to servo angles with mechanical limits to prevent overtravel and chatter.
 
       <h4>Results & Iteration</h4>
-      <!-- Write results, failures, improvements here -->
+      System successfully tracks hand motion across the camera field of view with responsive pan and tilt behavior. Remaining issues include detection noise and high-frequency jitter, motivating future filtering and calibration improvements.
 
       <h4>Media</h4>
-      <!-- Drop images/videos here -->
-      <!-- Example image: <img src="assets/img/hand-tracking.jpg" alt="Hand tracking robot"> -->
-      <!-- Example YouTube: <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe> -->
+      (Add images or videos here when ready)
     </article>
 
     <article class="project" id="end-effector">
       <h3>End Effector</h3>
 
       <h4>Overview</h4>
-      <!-- Write overview text here -->
+      Mechanically designed end-effector intended for CNC or robotic applications, emphasizing modular mounting and reliable assembly. Components were designed for practical fabrication and repeatable fit.
 
       <h4>Design Considerations</h4>
-      <!-- Write design details here -->
+      CAD focused on part tolerances, fastener access, and load paths to ensure structural integrity in printed components. Geometry was iterated to account for print shrinkage, alignment, and assembly order.
 
       <h4>Outcome</h4>
-      <!-- Write outcome here -->
+      The assembly was successfully modeled and prototyped with verified part fit and functional alignment. Design iterations improved manufacturability and highlighted the impact of tolerance selection in 3D-printed mechanisms.
 
       <h4>Media</h4>
-      <!-- Drop images/videos here -->
+      (Add images or CAD renders here when ready)
     </article>
 
     <article class="project" id="hand-crank">
       <h3>Hand Crank Light (Unsuccessful Build)</h3>
 
       <h4>Goal</h4>
-      <!-- Write goal here -->
+      Use a hand-cranked BLDC motor as a generator and a 3-phase bridge rectifier to power a single LED.
 
       <h4>What Was Tried</h4>
-      <!-- Write what you tried here -->
+      The BLDC’s three phases were connected to a 3-phase bridge to produce DC output, then routed to a single LED with current limiting. Multiple wiring and connection checks were performed to confirm phase continuity and polarity.
 
       <h4>Why It Didn’t Work</h4>
-      <!-- Write failure reasoning here -->
+      Hand-crank RPM produced insufficient rectified DC under load; the LED’s forward voltage threshold was not consistently reached. Bridge diode drops and wiring losses further reduced available voltage/current.
 
       <h4>Next Steps</h4>
-      <!-- Write what you'd do next here -->
+      Measure rectified DC vs RPM (open-circuit and under LED load) to quantify available power. Reduce voltage loss (Schottky bridge if possible) and add a capacitor and/or boost converter based on measured current.
 
       <h4>Media</h4>
-      <!-- Drop images/videos here -->
+      (Add photos of the motor, rectifier wiring, and your test setup.)
     </article>
 
     <article class="project" id="cad-gallery">
-      <h3>CAD Designs & Concepts</h3>
+  <h3>CAD Designs & Concepts</h3>
 
-      <h4>Overview</h4>
-      <!-- One short intro sentence -->
+  <h4>Overview</h4>
+  <p>
+    Collection of smaller CAD projects exploring mechanism design, packaging,
+    and gear-driven motion.
+  </p>
 
-      <h4>Gallery</h4>
-      <!-- Drop multiple images here -->
-      <!-- Example:
-      <figure>
-        <img src="assets/img/rc-car.jpg" alt="RC car CAD">
-        <figcaption class="muted">RC Car Design</figcaption>
-      </figure>
-      -->
-    </article>
-  </main>
+  <h4>Gallery</h4>
 
-  <footer class="container section">
-    <p class="muted">
-      Contact: <a href="mailto:YOUR_EMAIL_HERE">YOUR_EMAIL_HERE</a> ·
-      <a href="https://www.linkedin.com/in/YOUR_LINK_HERE">LinkedIn</a> ·
-      <a href="https://github.com/williamcurran">GitHub</a>
-    </p>
-  </footer>
+  <!-- Hand Crank Wrench -->
+  <figure>
+    <!-- Paste image here -->
+    <!-- <img src="assets/img/hand-crank-wrench.jpg" alt="Hand crank wrench CAD"> -->
+    <figcaption class="muted">
+      Hand Crank Wrench — manual mechanism concept focused on torque transfer and ergonomic form.
+    </figcaption>
+  </figure>
+
+  <!-- RC Car -->
+  <figure>
+    <!-- Paste image here -->
+    <!-- <img src="assets/img/rc-car.jpg" alt="RC car CAD design"> -->
+    <figcaption class="muted">
+      RC Car Design — drivetrain and chassis layout study with emphasis on packaging.
+    </figcaption>
+  </figure>
+
+  <!-- 5 Billion Year Gearbox -->
+  <figure>
+    <!-- Paste image here -->
+    <!-- <img src="assets/img/gearbox.jpg" alt="Multi-stage gearbox CAD"> -->
+    <figcaption class="muted">
+      “5 Billion Year” Gearbox — multi-stage gear train concept designed for extreme reduction ratios.
+    </figcaption>
+  </figure>
+
+  <!-- Finger Bike -->
+  <figure>
+    <!-- Paste image here -->
+    <!-- <img src="assets/img/finger-bike.jpg" alt="Finger bike CAD"> -->
+    <figcaption class="muted">
+      Finger Bike — compact mechanical assembly emphasizing part fit and joint motion.
+    </figcaption>
+  </figure>
+
+  <!-- Gear Playground -->
+  <figure>
+    <!-- Paste image here -->
+    <!-- <img src="assets/img/gear-playground.jpg" alt="Gear playground CAD"> -->
+    <figcaption class="muted">
+      Gear Playground — exploratory CAD models investigating gear meshes and motion transfer.
+    </figcaption>
+  </figure>
+
+</article>
 
 </body>
 </html>
