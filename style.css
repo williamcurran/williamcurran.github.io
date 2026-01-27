@@ -20,22 +20,11 @@ body {
 }
 
 /* ================== HEADINGS ================== */
-h1 {
-  margin-bottom: 6px;
-}
-
-h2 {
-  margin-bottom: 24px;
-}
-
-h3 {
-  margin-top: 32px;
-  margin-bottom: 10px;
-}
-
+h1 { margin: 0 0 6px; }
+h2 { margin: 0 0 24px; }
+h3 { margin: 28px 0 10px; }
 h4 {
-  margin-top: 18px;
-  margin-bottom: 6px;
+  margin: 16px 0 6px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   font-size: 0.9rem;
@@ -45,50 +34,66 @@ h4 {
 /* ================== PROJECT SECTIONS ================== */
 .project {
   border-top: 1px solid rgba(0,0,0,0.15);
-  padding-top: 24px;
-  margin-top: 24px;
+  padding-top: 22px;
+  margin-top: 22px;
 }
 
-/* ================== IMAGES (DEFAULT PROJECT SIZE) ================== */
+/* ================== MEDIA SIZING (MAKE SMALLER) ================== */
+/* Controls how big images + videos appear on ALL projects */
+:root {
+  --media-max: 340px;   /* <-- main knob: try 280–420px */
+  --thumb-max: 240px;   /* CAD gallery thumbnails */
+}
+
 figure {
-  margin: 16px 0 28px 0;
-}
-
-figure img {
-  max-width: 500px;   /* NORMAL project images */
-  width: 100%;
-  border-radius: 10px;
-  display: block;
+  margin: 14px 0 18px 0;   /* tighter spacing so media doesn't dominate */
 }
 
 figcaption {
   margin-top: 6px;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 }
 
-/* ================== VIDEOS ================== */
-iframe,
-video {
-  max-width: 500px;
+/* Project images */
+.project figure img {
+  max-width: var(--media-max);
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Project videos (YouTube/Vimeo iframe OR local <video>) */
+.project iframe,
+.project video {
+  max-width: var(--media-max);
   width: 100%;
   aspect-ratio: 16 / 9;
   border-radius: 10px;
   display: block;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
-/* ================== CAD DESIGNS & CONCEPTS ================== */
+/* Prevent huge default iframe height if aspect-ratio isn't supported */
+.project iframe {
+  height: auto;
+}
+
+/* ================== CAD DESIGNS & CONCEPTS (SMALLER) ================== */
+#cad-gallery figure {
+  margin: 12px 0 16px 0;
+}
+
 #cad-gallery figure img {
-  max-width: 300px;   /* SMALLER thumbnails */
+  max-width: var(--thumb-max);
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
 }
 
 #cad-gallery figcaption {
   font-size: 0.85rem;
-}
-
-/* Optional: tighten spacing in CAD section */
-#cad-gallery figure {
-  margin-bottom: 20px;
 }
 
 /* ================== LINKS ================== */
