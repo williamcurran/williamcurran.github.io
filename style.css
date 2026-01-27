@@ -1,7 +1,9 @@
+/* ================== GLOBAL ================== */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   line-height: 1.5;
+  color: #111;
 }
 
 .container {
@@ -17,27 +19,80 @@ body {
   opacity: 0.75;
 }
 
-h1 { margin: 0 0 6px; }
-h2 { margin: 0 0 18px; }
-h3 { margin: 26px 0 8px; }
+/* ================== HEADINGS ================== */
+h1 {
+  margin-bottom: 6px;
+}
+
+h2 {
+  margin-bottom: 24px;
+}
+
+h3 {
+  margin-top: 32px;
+  margin-bottom: 10px;
+}
+
 h4 {
-  margin: 16px 0 6px;
+  margin-top: 18px;
+  margin-bottom: 6px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   opacity: 0.85;
 }
 
+/* ================== PROJECT SECTIONS ================== */
 .project {
   border-top: 1px solid rgba(0,0,0,0.15);
-  padding-top: 20px;
-  margin-top: 20px;
+  padding-top: 24px;
+  margin-top: 24px;
 }
 
-img, video, iframe {
-  max-width: 500px;
+/* ================== IMAGES (DEFAULT PROJECT SIZE) ================== */
+figure {
+  margin: 16px 0 28px 0;
+}
+
+figure img {
+  max-width: 500px;   /* NORMAL project images */
   width: 100%;
   border-radius: 10px;
+  display: block;
 }
 
-a { color: inherit; }
+figcaption {
+  margin-top: 6px;
+  font-size: 0.9rem;
+}
+
+/* ================== VIDEOS ================== */
+iframe,
+video {
+  max-width: 500px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  display: block;
+  margin-top: 12px;
+}
+
+/* ================== CAD DESIGNS & CONCEPTS ================== */
+#cad-gallery figure img {
+  max-width: 300px;   /* SMALLER thumbnails */
+}
+
+#cad-gallery figcaption {
+  font-size: 0.85rem;
+}
+
+/* Optional: tighten spacing in CAD section */
+#cad-gallery figure {
+  margin-bottom: 20px;
+}
+
+/* ================== LINKS ================== */
+a {
+  color: inherit;
+  text-decoration: underline;
+}
