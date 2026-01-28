@@ -63,7 +63,7 @@ header p.muted {
 .about {
   max-width: 720px;         /* prevents spanning too wide */
   margin: 28px 0 0;         /* keeps it aligned left with header */
-  text-align: left;
+  text-align: center;
   font-size: 1.15rem;
   line-height: 1.65;
   color: var(--text);
