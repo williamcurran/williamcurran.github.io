@@ -1,23 +1,23 @@
 /* ================== THEME VARIABLES ================== */
 :root {
-  --bg: #0e1116;
-  --panel: #141922;
-  --text: #e6e9ef;
-  --muted: #9aa4b2;
-  --accent: #4da3ff;
+  --bg: #050b1a;          /* deep navy blue */
+  --panel: #0b132b;
+  --text: #f2f4f8;
+  --muted: #b7c0d1;
+  --accent: #5fa8ff;
 
-  --img-max: 280px;     /* project images */
-  --vid-max: 520px;     /* project videos */
-  --cad-max: 220px;     /* CAD thumbnails */
+  --img-max: 260px;       /* project images */
+  --vid-max: 560px;       /* project videos */
+  --cad-max: 220px;       /* CAD thumbnails */
 }
 
 /* ================== GLOBAL ================== */
 body {
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-family: "Times New Roman", Times, serif;
   margin: 0;
   background-color: var(--bg);
   color: var(--text);
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
 .container {
@@ -26,63 +26,88 @@ body {
 }
 
 .section {
-  padding: 56px 0;
+  padding: 64px 0;
 }
 
 .muted {
   color: var(--muted);
 }
 
-/* ================== HEADINGS ================== */
-h1 {
-  font-size: 2.2rem;
-  margin-bottom: 4px;
-  letter-spacing: 0.02em;
+/* ================== HEADER / NAME ================== */
+header h1 {
+  font-size: 3.6rem;        /* VERY large name */
+  margin: 0 0 6px;
+  letter-spacing: 0.04em;
 }
 
+header p {
+  font-size: 1.2rem;
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ================== SECTION HEADINGS ================== */
 h2 {
-  font-size: 1.6rem;
-  margin-bottom: 28px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  padding-bottom: 10px;
+  font-size: 2.2rem;
+  margin: 0 0 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  padding-bottom: 12px;
 }
 
+/* ================== PROJECT TITLES ================== */
 h3 {
-  font-size: 1.3rem;
-  margin-top: 36px;
-  margin-bottom: 12px;
+  font-size: 2rem;          /* LARGE project titles */
+  margin-top: 42px;
+  margin-bottom: 14px;
+  letter-spacing: 0.03em;
 }
 
+/* Subsection headers */
 h4 {
-  font-size: 0.8rem;
-  letter-spacing: 0.14em;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   margin-top: 22px;
   margin-bottom: 6px;
   color: var(--accent);
 }
 
-/* ================== PROJECT SECTIONS ================== */
+/* ================== PROJECT CONTAINERS ================== */
 .project {
+  display: flex;
+  flex-direction: column;
+
   background: linear-gradient(
     180deg,
-    rgba(255,255,255,0.02),
-    rgba(255,255,255,0.01)
+    rgba(255,255,255,0.03),
+    rgba(255,255,255,0.015)
   );
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 14px;
-  padding: 26px;
-  margin-bottom: 36px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 44px;
 }
 
-/* ================== MEDIA ================== */
+/* ================== MEDIA ORDER ================== */
+/* Videos FIRST */
+.project iframe,
+.project video {
+  order: 1;
+}
+
+/* Images AFTER videos */
+.project figure {
+  order: 2;
+}
+
+/* ================== MEDIA STYLING ================== */
 figure {
-  margin: 14px 0 18px 0;
+  margin: 16px 0 20px;
 }
 
 figcaption {
   margin-top: 6px;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--muted);
 }
 
@@ -91,7 +116,7 @@ figcaption {
   max-width: var(--img-max);
   width: 100%;
   border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
   display: block;
 }
 
@@ -101,18 +126,18 @@ figcaption {
   max-width: var(--vid-max);
   width: 100%;
   aspect-ratio: 16 / 9;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.18);
   box-shadow:
-    0 0 0 1px rgba(77,163,255,0.15),
-    0 8px 30px rgba(0,0,0,0.6);
-  margin-top: 14px;
+    0 0 0 1px rgba(95,168,255,0.25),
+    0 14px 40px rgba(0,0,0,0.75);
+  margin: 18px 0 22px;
   display: block;
 }
 
 /* Vertical videos (YouTube Shorts) */
 .project iframe {
-  max-height: 520px;
+  max-height: 560px;
 }
 
 /* ================== CAD DESIGNS & CONCEPTS ================== */
@@ -121,7 +146,7 @@ figcaption {
 }
 
 #cad-gallery figcaption {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
 }
 
 /* ================== LINKS ================== */
@@ -136,11 +161,16 @@ a:hover {
 
 /* ================== MOBILE ================== */
 @media (max-width: 700px) {
-  h1 { font-size: 1.8rem; }
-  h2 { font-size: 1.4rem; }
+  header h1 {
+    font-size: 2.6rem;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
 
   .project {
-    padding: 20px;
+    padding: 22px;
   }
 
   .project iframe,
