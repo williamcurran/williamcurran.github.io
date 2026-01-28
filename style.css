@@ -1,9 +1,23 @@
+/* ================== THEME VARIABLES ================== */
+:root {
+  --bg: #0e1116;
+  --panel: #141922;
+  --text: #e6e9ef;
+  --muted: #9aa4b2;
+  --accent: #4da3ff;
+
+  --img-max: 280px;     /* project images */
+  --vid-max: 520px;     /* project videos */
+  --cad-max: 220px;     /* CAD thumbnails */
+}
+
 /* ================== GLOBAL ================== */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
   margin: 0;
-  line-height: 1.5;
-  color: #111;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
 }
 
 .container {
@@ -12,92 +26,125 @@ body {
 }
 
 .section {
-  padding: 48px 0;
+  padding: 56px 0;
 }
 
 .muted {
-  opacity: 0.75;
+  color: var(--muted);
 }
 
 /* ================== HEADINGS ================== */
-h1 { margin: 0 0 6px; }
-h2 { margin: 0 0 24px; }
-h3 { margin: 28px 0 10px; }
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 28px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding-bottom: 10px;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-top: 36px;
+  margin-bottom: 12px;
+}
+
 h4 {
-  margin: 16px 0 6px;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  font-size: 0.9rem;
-  opacity: 0.85;
+  margin-top: 22px;
+  margin-bottom: 6px;
+  color: var(--accent);
 }
 
 /* ================== PROJECT SECTIONS ================== */
 .project {
-  border-top: 1px solid rgba(0,0,0,0.15);
-  padding-top: 22px;
-  margin-top: 22px;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.02),
+    rgba(255,255,255,0.01)
+  );
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 26px;
+  margin-bottom: 36px;
 }
 
-/* ================== MEDIA SIZING (MAKE SMALLER) ================== */
-/* Controls how big images + videos appear on ALL projects */
-:root {
-  --media-max: 340px;   /* <-- main knob: try 280–420px */
-  --thumb-max: 240px;   /* CAD gallery thumbnails */
-}
-
+/* ================== MEDIA ================== */
 figure {
-  margin: 14px 0 18px 0;   /* tighter spacing so media doesn't dominate */
+  margin: 14px 0 18px 0;
 }
 
 figcaption {
   margin-top: 6px;
-  font-size: 0.88rem;
+  font-size: 0.85rem;
+  color: var(--muted);
 }
 
-/* Project images */
+/* ---------- PROJECT IMAGES (SMALLER) ---------- */
 .project figure img {
-  max-width: var(--media-max);
+  max-width: var(--img-max);
   width: 100%;
-  height: auto;
   border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
   display: block;
 }
 
-/* Project videos (YouTube/Vimeo iframe OR local <video>) */
+/* ---------- PROJECT VIDEOS (LARGER) ---------- */
 .project iframe,
 .project video {
-  max-width: var(--media-max);
+  max-width: var(--vid-max);
   width: 100%;
   aspect-ratio: 16 / 9;
-  border-radius: 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow:
+    0 0 0 1px rgba(77,163,255,0.15),
+    0 8px 30px rgba(0,0,0,0.6);
+  margin-top: 14px;
   display: block;
-  margin-top: 10px;
 }
 
-/* Prevent huge default iframe height if aspect-ratio isn't supported */
+/* Vertical videos (YouTube Shorts) */
 .project iframe {
-  height: auto;
+  max-height: 520px;
 }
 
-/* ================== CAD DESIGNS & CONCEPTS (SMALLER) ================== */
-#cad-gallery figure {
-  margin: 12px 0 16px 0;
-}
-
+/* ================== CAD DESIGNS & CONCEPTS ================== */
 #cad-gallery figure img {
-  max-width: var(--thumb-max);
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  display: block;
+  max-width: var(--cad-max);
 }
 
 #cad-gallery figcaption {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 /* ================== LINKS ================== */
 a {
-  color: inherit;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
   text-decoration: underline;
+}
+
+/* ================== MOBILE ================== */
+@media (max-width: 700px) {
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.4rem; }
+
+  .project {
+    padding: 20px;
+  }
+
+  .project iframe,
+  .project video {
+    max-width: 100%;
+  }
 }
