@@ -40,12 +40,13 @@ header h1 {
   letter-spacing: 0.04em;
 }
 
-.about {
-  max-width: 820px;
-  font-size: 1.15rem;
-  margin-top: 18px;
-  color: var(--text);
+header.container {
+  max-width: 900px;      /* keeps text from stretching */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;    /* centers text horizontally */
 }
+
 
 header p {
   font-size: 1.2rem;
