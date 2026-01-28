@@ -9,9 +9,14 @@
   --img-max: 260px;       /* project images */
   --vid-max: 560px;       /* project videos */
   --cad-max: 220px;       /* CAD thumbnails */
+
+  --page-max: 1100px;     /* consistent content width */
+  --page-pad: 4vw;        /* consistent left/right inset on wide screens */
 }
 
 /* ================== GLOBAL ================== */
+* { box-sizing: border-box; }
+
 body {
   font-family: "Times New Roman", Times, serif;
   margin: 0;
@@ -20,43 +25,48 @@ body {
   line-height: 1.6;
 }
 
+.muted { color: var(--muted); }
+
+/* ================== CONSISTENT PAGE LAYOUT ================== */
+/* Use this for every major section wrapper */
 .container {
-  width: min(1100px, 92%);
-  margin: 0 auto;
+  width: min(var(--page-max), calc(100% - (var(--page-pad) * 2)));
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section {
   padding: 64px 0;
 }
 
-.muted {
-  color: var(--muted);
+/* Make sure header uses the SAME alignment as everything else */
+header.container {
+  text-align: left;
 }
 
 /* ================== HEADER / NAME ================== */
 header h1 {
-  font-size: 3.6rem;        /* VERY large name */
+  font-size: 3.6rem;        /* very large name */
   margin: 0 0 6px;
   letter-spacing: 0.04em;
 }
 
 header p {
-  font-size: 1.2rem;
   margin: 0;
-  color: var(--muted);
 }
 
-/* Force consistent horizontal alignment for header */
-header {
-  padding-left: 4vw;
-  padding-right: 4vw;
+header p.muted {
+  font-size: 1.2rem;
 }
 
-header .container {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
+/* Intro paragraph */
+.about {
+  max-width: 720px;         /* prevents spanning too wide */
+  margin: 28px 0 0;         /* keeps it aligned left with header */
   text-align: left;
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: var(--text);
 }
 
 /* ================== SECTION HEADINGS ================== */
@@ -69,9 +79,8 @@ h2 {
 
 /* ================== PROJECT TITLES ================== */
 h3 {
-  font-size: 2rem;          /* LARGE project titles */
-  margin-top: 42px;
-  margin-bottom: 14px;
+  font-size: 2rem;          /* large project titles */
+  margin: 0 0 14px;
   letter-spacing: 0.03em;
 }
 
@@ -104,14 +113,10 @@ h4 {
 /* ================== MEDIA ORDER ================== */
 /* Videos FIRST */
 .project iframe,
-.project video {
-  order: 1;
-}
+.project video { order: 1; }
 
 /* Images AFTER videos */
-.project figure {
-  order: 2;
-}
+.project figure { order: 2; }
 
 /* ================== MEDIA STYLING ================== */
 figure {
@@ -128,6 +133,7 @@ figcaption {
 .project figure img {
   max-width: var(--img-max);
   width: 100%;
+  height: auto;
   border-radius: 10px;
   border: 1px solid rgba(255,255,255,0.15);
   display: block;
@@ -174,20 +180,17 @@ a:hover {
 
 /* ================== MOBILE ================== */
 @media (max-width: 700px) {
-  header h1 {
-    font-size: 2.6rem;
-  }
+  header h1 { font-size: 2.6rem; }
+  h2 { font-size: 1.7rem; }
+  h3 { font-size: 1.6rem; }
 
-  h3 {
-    font-size: 1.6rem;
-  }
+  .section { padding: 48px 0; }
+  .project { padding: 22px; }
 
-  .project {
-    padding: 22px;
-  }
-
+  /* Allow media to fill width on small screens */
   .project iframe,
-  .project video {
+  .project video,
+  .project figure img {
     max-width: 100%;
   }
 }
