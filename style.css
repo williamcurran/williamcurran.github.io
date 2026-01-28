@@ -40,19 +40,19 @@ header h1 {
   letter-spacing: 0.04em;
 }
 
-header.container {
-  max-width: 900px;      /* keeps text from stretching */
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;    /* centers text horizontally */
-}
-
-
 header p {
   font-size: 1.2rem;
   margin: 0;
   color: var(--muted);
 }
+
+header.container {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
 
 /* ================== SECTION HEADINGS ================== */
 h2 {
