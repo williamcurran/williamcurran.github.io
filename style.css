@@ -46,18 +46,18 @@ header p {
   color: var(--muted);
 }
 
-.about {
-  max-width: 720px;     /* controls line length */
-  margin-top: 28px;     /* spacing from subtitle */
-  text-align: left;     /* LEFT aligned text */
-  font-size: 1.15rem;
-  line-height: 1.65;
-  color: var(--text);
+/* Force consistent horizontal alignment for header */
+header {
+  padding-left: 4vw;
+  padding-right: 4vw;
 }
 
-
-
-
+header .container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
 
 /* ================== SECTION HEADINGS ================== */
 h2 {
