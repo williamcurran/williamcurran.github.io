@@ -25,6 +25,19 @@ body {
   margin: 0 auto;
 }
 
+/* Force consistent horizontal alignment for header */
+header {
+  padding-left: 4vw;
+  padding-right: 4vw;
+}
+
+header .container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
 .section {
   padding: 64px 0;
 }
@@ -46,18 +59,7 @@ header p {
   color: var(--muted);
 }
 
-/* Force consistent horizontal alignment for header */
-header {
-  padding-left: 4vw;
-  padding-right: 4vw;
-}
 
-header .container {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-}
 
 /* ================== SECTION HEADINGS ================== */
 h2 {
