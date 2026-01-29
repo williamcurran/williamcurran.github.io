@@ -1,196 +1,256 @@
-/* ================== THEME VARIABLES ================== */
-:root {
-  --bg: #050b1a;          /* deep navy blue */
-  --panel: #0b132b;
+/* =========================================================
+   William Curran — Portfolio (Responsive, cohesive, clean)
+   Drop-in replacement for style.css (blank slate)
+   ========================================================= */
+
+/* ---------- THEME ---------- */
+:root{
+  --bg: #050b1a;               /* deep navy */
+  --panel: rgba(255,255,255,.03);
+  --border: rgba(255,255,255,.12);
   --text: #f2f4f8;
   --muted: #b7c0d1;
   --accent: #5fa8ff;
 
-  --img-max: 260px;       /* project images */
-  --vid-max: 560px;       /* project videos */
-  --cad-max: 220px;       /* CAD thumbnails */
+  --max: 1100px;
+  --pad: 24px;
 
-  --page-max: 1100px;     /* consistent content width */
-  --page-pad: 4vw;        /* consistent left/right inset on wide screens */
+  /* media sizing */
+  --proj-video-max: 720px;     /* bigger videos */
+  --proj-img-max: 320px;       /* smaller images */
+  --cad-thumb-max: 220px;      /* smallest thumbnails */
 }
 
-/* ================== GLOBAL ================== */
-* { box-sizing: border-box; }
+/* ---------- RESET ---------- */
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+img,video{ max-width:100%; height:auto; display:block; }
+iframe{ display:block; border:0; }
+a{ color:inherit; }
 
-body {
-  font-family: "Times New Roman", Times, serif;
-  margin: 0;
-  background-color: var(--bg);
+/* ---------- BASE ---------- */
+body{
+  font-family:"Times New Roman", Times, serif;
+  background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height:1.6;
 }
 
-.muted { color: var(--muted); }
+.muted{ color: var(--muted); }
 
-/* ================== CONSISTENT PAGE LAYOUT ================== */
-/* Use this for every major section wrapper */
-.container {
-  width: min(var(--page-max), calc(100% - (var(--page-pad) * 2)));
-  margin-left: auto;
-  margin-right: auto;
+/* ---------- LAYOUT ---------- */
+.container{
+  width: min(var(--max), calc(100% - (var(--pad) * 2)));
+  margin: 0 auto;
 }
 
-.section {
-  padding: 64px 0;
+.section{
+  padding: clamp(42px, 6vw, 78px) 0;
 }
 
-/* Make sure header uses the SAME alignment as everything else */
-header.container {
-  text-align: left;
+/* ---------- TYPE ---------- */
+h1{
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  margin: 0 0 10px;
+  letter-spacing: .04em;
 }
 
-/* ================== HEADER / NAME ================== */
-header h1 {
-  font-size: 3.6rem;        /* very large name */
-  margin: 0 0 6px;
-  letter-spacing: 0.04em;
-}
-
-header p {
-  margin: 0;
-}
-
-header p.muted {
-  font-size: 1.2rem;
-}
-
-/* Intro paragraph */
-.about {
-  max-width: 720px;         /* prevents spanning too wide */
-  margin: 28px 0 0;         /* keeps it aligned left with header */
-  text-align: center;
-  font-size: 1.15rem;
-  line-height: 1.65;
-  color: var(--text);
-}
-
-/* ================== SECTION HEADINGS ================== */
-h2 {
-  font-size: 2.2rem;
-  margin: 0 0 32px;
-  border-bottom: 1px solid rgba(255,255,255,0.12);
+h2{
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  margin: 0 0 28px;
   padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,.12);
 }
 
-/* ================== PROJECT TITLES ================== */
-h3 {
-  font-size: 2rem;          /* large project titles */
-  margin: 0 0 14px;
-  letter-spacing: 0.03em;
+h3{
+  font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+  margin: 0 0 12px;
+  letter-spacing: .03em;
 }
 
-/* Subsection headers */
-h4 {
-  font-size: 0.85rem;
-  letter-spacing: 0.18em;
+h4{
+  font-size: .85rem;
+  letter-spacing: .18em;
   text-transform: uppercase;
-  margin-top: 22px;
-  margin-bottom: 6px;
   color: var(--accent);
+  margin: 22px 0 8px;
 }
 
-/* ================== PROJECT CONTAINERS ================== */
-.project {
-  display: flex;
-  flex-direction: column;
+p{ margin: 0 0 12px; }
 
-  background: linear-gradient(
-    180deg,
-    rgba(255,255,255,0.03),
-    rgba(255,255,255,0.015)
-  );
-  border: 1px solid rgba(255,255,255,0.12);
+/* =========================================================
+   HERO (Header): text left + photo right on desktop,
+   stacks cleanly on mobile. Everything aligned.
+   ========================================================= */
+.hero{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: clamp(20px, 4vw, 60px);
+  align-items:center;
+}
+
+.hero-sub{
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.about{
+  max-width: 52ch;        /* readable line length */
+  font-size: 1.12rem;
+  margin-top: 22px;
+}
+
+/* profile image (circle) */
+.profile{
+  justify-self:end;
+  width: clamp(160px, 22vw, 240px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,.18);
+  box-shadow:
+    0 0 0 2px rgba(95,168,255,.22),
+    0 18px 50px rgba(0,0,0,.75);
+}
+
+/* Mobile stack */
+@media (max-width: 820px){
+  .hero{
+    grid-template-columns: 1fr;
+  }
+  .profile{
+    justify-self:start; /* stays aligned with text */
+    margin-top: 16px;
+  }
+}
+
+/* =========================================================
+   PROJECT CARDS (cohesive, clean)
+   ========================================================= */
+.project{
+  background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.015));
+  border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 32px;
-  margin-bottom: 44px;
+  padding: clamp(18px, 3vw, 32px);
+  margin: 0 0 36px;
 }
 
-/* ================== MEDIA ORDER ================== */
-/* Videos FIRST */
+/* Media: video first, then images. Works even if HTML order differs. */
 .project iframe,
-.project video { order: 1; }
+.project video{ order: 1; }
+.project figure{ order: 2; }
 
-/* Images AFTER videos */
-.project figure { order: 2; }
-
-/* ================== MEDIA STYLING ================== */
-figure {
-  margin: 16px 0 20px;
+/* Make project content flow nicely */
+.project{
+  display:flex;
+  flex-direction:column;
 }
 
-figcaption {
-  margin-top: 6px;
-  font-size: 0.9rem;
+/* Video styling (bigger) */
+.project iframe,
+.project video{
+  width: 100%;
+  max-width: var(--proj-video-max);
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow:
+    0 0 0 1px rgba(95,168,255,.22),
+    0 14px 44px rgba(0,0,0,.70);
+  margin: 12px 0 18px;
+}
+
+/* If you embed Shorts (vertical), add class="short" to that iframe */
+.project iframe.short{
+  aspect-ratio: 9 / 16;
+  max-width: 420px;
+}
+
+/* Figures + images (smaller) */
+figure{
+  margin: 12px 0 18px;
+}
+
+.project figure img{
+  max-width: var(--proj-img-max);
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.14);
+}
+
+figcaption{
+  margin-top: 7px;
+  font-size: .92rem;
   color: var(--muted);
 }
 
-/* ---------- PROJECT IMAGES (SMALLER) ---------- */
-.project figure img {
-  max-width: var(--img-max);
+/* Two project images side-by-side on wider screens (optional).
+   Wrap your two image figures in: <div class="media-row"> ... </div>
+*/
+.media-row{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items:start;
+}
+@media (max-width: 820px){
+  .media-row{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   CAD GALLERY (small thumbnails, neat grid)
+   Wrap CAD figures in: <div class="cad-grid"> ... </div>
+   ========================================================= */
+.cad-grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 12px;
+}
+@media (max-width: 980px){
+  .cad-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px){
+  .cad-grid{ grid-template-columns: 1fr; }
+}
+
+.cad-grid figure{
+  background: rgba(255,255,255,.02);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 14px;
+  padding: 14px;
+  margin: 0;
+}
+
+.cad-grid img{
+  max-width: var(--cad-thumb-max);
   width: 100%;
-  height: auto;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.15);
-  display: block;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.12);
 }
 
-/* ---------- PROJECT VIDEOS (LARGER) ---------- */
-.project iframe,
-.project video {
-  max-width: var(--vid-max);
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.18);
-  box-shadow:
-    0 0 0 1px rgba(95,168,255,0.25),
-    0 14px 40px rgba(0,0,0,0.75);
-  margin: 18px 0 22px;
-  display: block;
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer{
+  border-top: 1px solid rgba(255,255,255,.10);
+  padding: 28px 0 42px;
+  margin-top: 10px;
 }
 
-/* Vertical videos (YouTube Shorts) */
-.project iframe {
-  max-height: 560px;
-}
-
-/* ================== CAD DESIGNS & CONCEPTS ================== */
-#cad-gallery figure img {
-  max-width: var(--cad-max);
-}
-
-#cad-gallery figcaption {
-  font-size: 0.85rem;
-}
-
-/* ================== LINKS ================== */
-a {
+footer a{
   color: var(--accent);
   text-decoration: none;
 }
-
-a:hover {
+footer a:hover{
   text-decoration: underline;
 }
 
-/* ================== MOBILE ================== */
-@media (max-width: 700px) {
-  header h1 { font-size: 2.6rem; }
-  h2 { font-size: 1.7rem; }
-  h3 { font-size: 1.6rem; }
-
-  .section { padding: 48px 0; }
-  .project { padding: 22px; }
-
-  /* Allow media to fill width on small screens */
-  .project iframe,
-  .project video,
-  .project figure img {
-    max-width: 100%;
-  }
+/* =========================================================
+   OPTIONAL: make long lines look nicer on large screens
+   ========================================================= */
+.project p{
+  max-width: 85ch;
 }
