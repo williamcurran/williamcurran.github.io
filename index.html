@@ -1,202 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>William Curran | Mechanical Engineering</title>
-  <meta name="description" content="Mechanical engineering portfolio showcasing CAD, prototyping, and mechatronics projects with a focus on robotics and iterative design.">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>William Curran — Robotics Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand">William Curran / Robotics Systems Portfolio</div>
+      <nav class="nav">
+        <a href="#projects">Projects</a>
+        <a href="#focus">Focus</a>
+        <a href="#contact">Links</a>
+      </nav>
+    </header>
 
- <header class="container section">
-  <div class="hero">
-    <div>
-      <h1>William Curran</h1>
-      <p class="muted hero-sub">Mechanical Engineering Portfolio</p>
-      <p class="about">I am a detail-oriented mechanical engineering student passionate about robotics and electromechanical systems. I enjoy designing and building mechanical assemblies, analyzing failures, and iterating with close attention to tolerances, alignment, and system behavior. My work is driven by turning precise design decisions into reliable, functional hardware.</p>
-  
-  <div class="contact-actions">
-  <a class="action-btn" href="Resume William Curran.pdf" download>
-    Download Resume
-  </a>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Robotics / Design / Control / Vision</div>
+        <h1>William Curran</h1>
+        <p>
+          I design and build robotics systems with a focus on mechanical design, actuation, embedded control,
+          sensors, and computer vision. My strongest work is at the system level: turning CAD, code, electronics,
+          and fabrication into working robotic hardware.
+        </p>
+        <p>
+          My core strengths are SolidWorks robotics design, electrical integration with servos, steppers, Arduinos,
+          Raspberry Pis, and sensors, plus fast application development in Python for vision and control workflows.
+          This site is a project showcase built around real systems, not filler.
+        </p>
 
-  <a class="action-link" href="mailto:YOUR_EMAIL_HERE">
-    willrcurran10@gmail.com
-  </a>
+        <div class="hero-actions">
+          <a class="button" href="#projects">View Projects</a>
+          <a class="link-button" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+          <a class="link-button" href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
+          <a class="link-button" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
 
-  <a class="action-link" href="https://www.linkedin.com/in/william-curran-8b45a8381" target="_blank">
-    LinkedIn
-  </a>
-    
-    <h4>Selected Certifications</h4>
+      <div class="hero-image-wrap">
+        <img class="profile" src="images/profile.jpg" alt="Portrait of William Curran" />
+      </div>
+    </section>
 
-<p class="cert-item">
-  <strong>SolidWorks CSWA</strong> — Certified SolidWorks Associate; validated competency in part modeling, assemblies, and engineering drawings.
-</p>
+    <section class="section" id="projects">
+      <div class="section-head">
+        <div class="section-label">Selected Robotics Projects</div>
+        <div>
+          <h2>System-level build work</h2>
+          <p>
+            These projects are the clearest examples of how I approach robotics: design the mechanism, select the
+            hardware, build the control path, solve the mechanical failures, and iterate until the system works.
+          </p>
+        </div>
+      </div>
 
-<p class="cert-item">
-  <strong>MATLAB Onramp (MathWorks)</strong> — Foundational MATLAB programming, arrays, plotting, and scripting; applied in project-level prototyping and data visualization.
-</p>
+      <div class="project-list">
+        <!-- FEATURED PROJECT -->
+        <article class="project featured">
+          <div class="project-number">Featured / 01</div>
 
+          <div class="project-copy">
+            <h3>Vision-Driven Robotic Manipulator</h3>
+            <p class="lead">
+              A 4-degree-of-freedom computer vision robotic arm built to translate live hand motion into physical
+              joint movement through a full software-to-hardware control chain.
+            </p>
 
-</div>
+            <p>
+              This system used <strong>MediaPipe</strong> and <strong>Python</strong> for real-time hand tracking,
+              an <strong>Arduino</strong> for actuator control, <strong>MG996R servos</strong> for joint actuation,
+              and custom <strong>3D printed structural components</strong> to create a working robotic arm capable
+              of mirrored motion response.
+            </p>
 
-    </div>
+            <p>
+              The project required coordination across computer vision, serial communication, servo control, CAD,
+              fabrication, and structural iteration. The main engineering limitation was insufficient holding torque
+              and excessive mechanical wobble under load. To improve performance, I shortened the arm length to reduce
+              joint moment demand and redesigned parts with stronger geometry to increase rigidity.
+            </p>
 
-    <img class="profile" src="unnamed.jpg" alt="William Curran">
+            <ul>
+              <li>Designed and assembled a 4-DOF robotic arm around MG996R servo actuation</li>
+              <li>Built a Python + MediaPipe pipeline for real-time hand landmark tracking</li>
+              <li>Sent motion data from Python to Arduino for live servo position control</li>
+              <li>Modeled and iterated custom printed components to improve stiffness and reduce instability</li>
+              <li>Debugged practical robotics issues including torque limits, oscillation, wobble, and motion tuning</li>
+            </ul>
+
+            <div class="project-meta">
+              <div class="tag">Python</div>
+              <div class="tag">MediaPipe</div>
+              <div class="tag">Arduino</div>
+              <div class="tag">MG996R Servos</div>
+              <div class="tag">3D Printing</div>
+              <div class="tag">SolidWorks</div>
+            </div>
+          </div>
+
+          <div class="project-media">
+            <div class="frame">
+              <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Vision-Driven Robotic Manipulator Demo" allowfullscreen></iframe>
+              <div class="caption">Primary demo video</div>
+            </div>
+
+            <div class="thumb-grid">
+              <figure>
+                <img src="images/hand-arm-1.jpg" alt="4 degree of freedom hand tracking robot arm front view" />
+                <figcaption>Final arm assembly</figcaption>
+              </figure>
+              <figure>
+                <img src="images/hand-arm-2.jpg" alt="Robotic arm side view showing printed links and joints" />
+                <figcaption>Revised shorter arm geometry</figcaption>
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 02 -->
+        <article class="project">
+          <div class="project-number">02</div>
+
+          <div class="project-copy">
+            <h3>Computer Vision Tracking Turret</h3>
+            <p>
+              A hand-tracking turret system built to convert visual target position into coordinated pan and tilt
+              motion. This project focused on responsive tracking, actuator control, and stable motion across a simpler
+              but more direct robotics platform.
+            </p>
+
+            <p>
+              Compared with the robotic arm, this system emphasized tracking performance, control responsiveness, and
+              cleaner axis isolation. It served as a strong testbed for camera-based target following, servo tuning,
+              and software-to-mechanical integration.
+            </p>
+
+            <ul>
+              <li>Built a vision-guided pan/tilt tracking platform for live motion following</li>
+              <li>Integrated camera input, Python processing, and microcontroller-based actuation</li>
+              <li>Tuned motion speed and update behavior to improve responsiveness without excessive jitter</li>
+              <li>Used mechanical mounting and axis layout to support repeatable directional tracking</li>
+            </ul>
+
+            <div class="project-meta">
+              <div class="tag">Tracking</div>
+              <div class="tag">Servos</div>
+              <div class="tag">Python</div>
+              <div class="tag">Arduino</div>
+              <div class="tag">Control</div>
+            </div>
+          </div>
+
+          <div class="project-media compact">
+            <div class="frame">
+              <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Computer Vision Tracking Turret Demo" allowfullscreen></iframe>
+              <div class="caption">Tracking turret demo</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 03 -->
+        <article class="project">
+          <div class="project-number">03</div>
+
+          <div class="project-copy">
+            <h3>CNC End Effector</h3>
+            <p>
+              A custom end-effector project centered on robotics tooling, attachment design, and mechanical interface
+              quality. The main value of this build was in designing a functional mechanism that could integrate with
+              a larger automated system rather than exist as a standalone part.
+            </p>
+
+            <p>
+              This project emphasized geometry, mounting strategy, mechanical packaging, and design for controlled
+              motion. It reflects my interest in robotics beyond arms alone, especially in the hardware that gives
+              robots useful physical capability.
+            </p>
+
+            <ul>
+              <li>Designed a robotics-focused end effector around functional mechanical constraints</li>
+              <li>Used SolidWorks to develop attachment geometry, structure, and integration features</li>
+              <li>Focused on manufacturable design and practical system compatibility</li>
+              <li>Approached the project from a robotics tooling perspective rather than just part modeling</li>
+            </ul>
+
+            <div class="project-meta">
+              <div class="tag">SolidWorks</div>
+              <div class="tag">End Effector Design</div>
+              <div class="tag">Mechanisms</div>
+              <div class="tag">Robotics Tooling</div>
+            </div>
+          </div>
+
+          <div class="project-media compact">
+            <div class="frame">
+              <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="CNC End Effector Demo" allowfullscreen></iframe>
+              <div class="caption">End effector overview</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 04 -->
+        <article class="project">
+          <div class="project-number">04</div>
+
+          <div class="project-copy">
+            <h3>Hand-Crank Light Generator</h3>
+            <p>
+              A small electromechanical power-generation project built around mechanical input, electrical output,
+              and practical energy conversion. This project is simpler than the robotics systems above, but it shows
+              the same engineering pattern: build the mechanism, wire the system correctly, and make the device
+              produce a real physical result.
+            </p>
+
+            <p>
+              The value of this build was in combining motion, generation, wiring, and output behavior into one
+              compact system. It demonstrates comfort with hands-on electrical work and real hardware iteration.
+            </p>
+
+            <ul>
+              <li>Built a manually actuated electromechanical lighting system</li>
+              <li>Integrated mechanical motion with electrical generation and output</li>
+              <li>Worked through practical issues in wiring, output behavior, and physical construction</li>
+              <li>Used the project as a proof of hands-on build capability across mechanical and electrical domains</li>
+            </ul>
+
+            <div class="project-meta">
+              <div class="tag">Electromechanical</div>
+              <div class="tag">Wiring</div>
+              <div class="tag">Power Generation</div>
+              <div class="tag">Prototype Build</div>
+            </div>
+          </div>
+
+          <div class="project-media compact">
+            <div class="frame">
+              <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Hand Crank Light Generator Demo" allowfullscreen></iframe>
+              <div class="caption">Hand-crank generator demo</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="focus">
+      <div class="skills-grid">
+        <div class="section-label">Core Strengths</div>
+
+        <div>
+          <h2>Robotics-focused skill set</h2>
+          <p>
+            My work is centered on robotics hardware and robotics system integration. I am strongest where mechanical
+            design, electronics, and control software meet.
+          </p>
+        </div>
+
+        <div class="skill-stack">
+          <div class="skill-card">
+            <div class="small">Mechanical Design</div>
+            <p>SolidWorks for robotics structures, actuator layouts, custom parts, linkages, mounting strategy, and system packaging.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="small">Electrical + Embedded</div>
+            <p>Servos, steppers, Arduinos, Raspberry Pis, sensors, wiring, power handling, and actuator integration.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="small">Software + Vision</div>
+            <p>Python-based application development for robotics workflows, especially computer vision, control logic, and fast prototyping.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="contact-grid">
+        <div class="section-label">Links</div>
+
+        <div>
+          <h2>Professional links</h2>
+          <p>
+            Keep these boxes and swap in your real information. They fit the layout well and give people the fast exits
+            they actually use.
+          </p>
+        </div>
+
+        <div class="contact-list">
+          <div class="contact-card">
+            <div class="small">Resume</div>
+            <p><a href="resume.pdf" target="_blank" rel="noopener">Open Resume</a></p>
+          </div>
+
+          <div class="contact-card">
+            <div class="small">LinkedIn</div>
+            <p><a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">View LinkedIn</a></p>
+          </div>
+
+          <div class="contact-card">
+            <div class="small">GitHub</div>
+            <p><a href="https://github.com/yourusername" target="_blank" rel="noopener">View GitHub</a></p>
+          </div>
+
+          <div class="contact-card">
+            <div class="small">Email</div>
+            <p><a href="mailto:your@email.com">your@email.com</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>William Curran</div>
+      <div>Robotics portfolio / GitHub Pages ready</div>
+    </footer>
   </div>
-</header>
-
-  
-  <main class="container section" id="projects">
-    <h2>Projects</h2>
-
-    <article class="project" id="hand-tracking">
-      <h3>Motion-Detecting Turret</h3>
-
-      <h4>Overview</h4>
-      Two-axis pan/tilt system that tracks hand position using a camera and Arduino-controlled servos via Python code. Hand coordinates are mapped to angular commands to drive real-time motion.
-
-      <h4>Engineering / Design</h4>
-      Pan/tilt mount and brackets were designed in CAD and 3D printed with focus on stiffness, alignment, and servo mounting geometry. Control logic converts image-space coordinates to servo angles with mechanical limits to prevent overtravel and chatter.
-
-      <h4>Results & Iteration</h4>
-      System successfully tracks hand motion across the camera field of view with responsive pan and tilt behavior. Remaining issues include detection noise and high-frequency jitter, motivating future filtering and calibration improvements.
-      
-      <h4>Media</h4>
-
-        <!-- Video -->
-    <iframe
-      src="https://www.youtube.com/embed/C-A8NP45xGM?si=SeG4TuScqGMPZlrW"
-      allowfullscreen>
-    </iframe>
-      
-    <!-- Image 1 -->
-    <figure>
-      <img src="Screenshot 2026-01-31 155727.png" alt="Hand tracking robot CAD">
-    
-    </figure>
-
-  
-
-  
-  
-    </article>
-
-    <article class="project" id="end-effector">
-      <h3>CNC Gripper</h3>
-
-      <h4>Overview</h4>
-      Mechanically designed end-effector intended for CNC or robotic applications, emphasizing modular mounting, MATLAB motion code, and reliable assembly. Components were designed for practical fabrication and repeatable fit.
-
-      <h4>Design Considerations</h4>
-      CAD focused on part tolerances, fastener access, and load paths to ensure structural integrity in printed components. Geometry was iterated to account for print shrinkage, alignment, and assembly order.
-
-      <h4>Outcome</h4>
-      The assembly was successfully modeled and prototyped with verified part fit and functional alignment. Design iterations improved manufacturability and highlighted the impact of tolerance selection in 3D-printed mechanisms.
-
-      <h4>Media</h4>
-
-      <!-- Video -->
-    <iframe
-      src="https://www.youtube.com/embed/F1C1ZO1pY7s?si=7tws63Ag0x6Xvhex"
-      allowfullscreen>
-    </iframe>
- 
-       <!-- Image 1 -->
-    <figure>
-      <img src="IMG_1528 2.jpeg">
-      
-    </figure>
-
-    <!-- Image 2 -->
-    <figure>
-      <img src="IMG_1527 2.jpeg">
-     
-    </figure>
-
-       </article>
-
-    <article class="project" id="hand-crank">
-      <h3>Hand Crank Light (Unsuccessful Build)</h3>
-
-      <h4>Goal</h4>
-      Use a hand-cranked BLDC motor as a generator and a 3-phase bridge rectifier to power a single LED.
-
-      <h4>What Was Tried</h4>
-      The BLDC’s three phases were connected to a 3-phase bridge to produce DC output, then routed to a single LED with current limiting. Multiple wiring and connection checks were performed to confirm phase continuity and polarity.
-
-      <h4>Why It Didn’t Work</h4>
-      Hand-crank RPM produced insufficient rectified DC under load; the LED’s forward voltage threshold was not consistently reached. Bridge diode drops and wiring losses further reduced available voltage/current.
-
-      <h4>Next Steps</h4>
-      Measure rectified DC vs RPM (open-circuit and under LED load) to quantify available power. Reduce voltage loss (Schottky bridge if possible) and add a capacitor and/or boost converter based on measured current.
-
-      <h4>Media</h4>
-
-        <!-- Video -->
-    <iframe
-      src="https://www.youtube.com/embed/7chSDxdoLrg?si=oo0ARJKYZFQKfy6p"
-      allowfullscreen>
-    </iframe>
-      
-       <!-- Image 1 -->
-    <figure>
-      <img src="Screenshot 2026-01-27 150937.png">
-     
-    </figure>
-
-    <!-- Image 2 -->
-    <figure>
-      <img src="IMG_3404.jpeg">
-      
-    </figure>
-
-    </article>
-
-    <article class="project" id="cad-gallery">
-  <h3>CAD Designs & Concepts</h3>
-
-  <h4>Overview</h4>
-  <p>
-    Collection of smaller CAD projects exploring mechanism design, packaging,
-    and gear-driven motion.
-  </p>
-
-
-  <!-- CAD GRID STARTS HERE -->
-  <div class="cad-grid">
-
-    <figure>
-      <img src="Screenshot 2026-01-27 145532.png" alt="Hand crank wrench CAD">
-      <figcaption>Hand Crank Wrench — torque transfer concept.</figcaption>
-    </figure>
-
-    <figure>
-      <img src="Screenshot 2026-01-27 150638.png" alt="RC car CAD">
-      <figcaption>RC Car — drivetrain and chassis layout.</figcaption>
-    </figure>
-
-    <figure>
-      <img src="Screenshot 2026-01-27 150249.png" alt="Multi-stage gearbox CAD">
-      <figcaption>“5 Billion Year” Gearbox — extreme reduction concept.</figcaption>
-    </figure>
-
-    <figure>
-      <img src="Screenshot 2026-01-27 151045.png" alt="Finger bike CAD">
-      <figcaption>Finger Bike — compact mechanical assembly.</figcaption>
-    </figure>
-
-    <figure>
-      <img src="Screenshot 2026-01-27 150826.png" alt="Gear playground CAD">
-      <figcaption>Gear Playground — mesh and motion studies.</figcaption>
-    </figure>
-
-  </div>
-  <!-- CAD GRID ENDS HERE -->
-
-</article>
-
 </body>
 </html>
