@@ -192,7 +192,12 @@ li{
   aspect-ratio: 4 / 5;
   object-fit: cover;
   border: 1px solid var(--line-strong);
-  filter: grayscale(100%);
+  transition: 0.3s ease;
+}
+
+.profile:hover{
+  transform: scale(1.02);
+}
 }
 
 /* ---------- SECTIONS ---------- */
