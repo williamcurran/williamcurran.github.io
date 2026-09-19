@@ -665,3 +665,12 @@ footer {
     width: 100%;
   }
 }
+
+/* Electrode grid: square cells so portrait photos crop less */
+.img-grid-4 figure img,
+.img-grid-4 figure > .ph {
+  aspect-ratio: 1 / 1;
+}
+.img-grid-4 .video-wrap--cell {
+  aspect-ratio: 1 / 1;
+}
