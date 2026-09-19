@@ -674,3 +674,11 @@ footer {
 .img-grid-4 .video-wrap--cell {
   aspect-ratio: 1 / 1;
 }
+
+/* Industrial arm media: portrait photos on top, 4:3 photo below */
+.img-grid-2.img-grid-portrait figure img {
+  aspect-ratio: 3 / 4;
+}
+.single-img.single-img--43 img {
+  aspect-ratio: 4 / 3;
+}
