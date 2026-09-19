@@ -44,8 +44,8 @@
         <div class="img-corner br"></div>
       </div>
       <div class="hero-stats">
-        <div class="stat"><span class="stat-n">4</span><span class="stat-l">DOF Arm</span></div>
-        <div class="stat"><span class="stat-n">3</span><span class="stat-l">Vision Systems</span></div>
+        <div class="stat"><span class="stat-n">2</span><span class="stat-l">Robotic Arms</span></div>
+        <div class="stat"><span class="stat-n">1</span><span class="stat-l">Neural Fab Rig</span></div>
         <div class="stat"><span class="stat-n">∞</span><span class="stat-l">Iterations</span></div>
       </div>
     </div>
@@ -55,11 +55,111 @@
   <section class="section" id="projects">
     <div class="section-label">// 01 — Selected Projects</div>
 
-    <!-- PROJECT 01 FEATURED -->
+    <!-- PROJECT 01 FEATURED — NEURAL ELECTRODE FABRICATOR -->
     <article class="project project--featured">
       <div class="proj-header">
         <span class="proj-num">01</span>
-        <h2>Vision-Driven Robotic Manipulator</h2>
+        <h2>Neural Electrode Fabricator</h2>
+        <div class="proj-tags">
+          <span>Arduino Mega</span><span>Laser</span><span>Motion Control</span><span>Python</span><span>Data Logging</span><span>Microscopy</span><span>Neurotech</span>
+        </div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-copy">
+          <p class="proj-lead">A precision laser rig for preparing neural microelectrodes, with built-in data collection for testing how different motions affect the wire.</p>
+          <p>Neural interfaces depend on extremely fine conductive filaments — multiple material types, each under 20 µm in diameter. This rig holds a filament on a motorized linear stage and processes it with a PWM-controlled laser. It can cut the tip to a very sharp point and strip the insulation to a set length without damaging the conductor underneath.</p>
+          <p>Every run is logged automatically to CSV, and the firmware is built so that any motion profile — speed in mm/s, power as a percentage, single or dual pass — takes only a short command to run. That makes it quick to test a motion and see exactly how it affects the wire.</p>
+          <div class="list-label">Key components</div>
+          <ul>
+            <li>Arduino Mega controller</li>
+            <li>NEMA 17 stepper on a precision linear stage</li>
+            <li>450 nm PWM-controlled diode laser module</li>
+            <li>Custom firmware for easy motion and power testing</li>
+            <li>Python serial logger for automatic CSV data collection</li>
+            <li>Microscope for imaging and inspection</li>
+          </ul>
+        </div>
+        <div class="proj-media">
+          <!-- 2x2 GRID: photo, photo, VIDEO (bottom-left), photo -->
+          <div class="img-grid-4">
+            <figure>
+              <!-- replace .ph with <img src="electrode-1.jpg" alt="..." /> -->
+              <div class="ph">Photo 1</div>
+              <figcaption>Caption</figcaption>
+            </figure>
+            <figure>
+              <!-- replace .ph with <img src="electrode-2.jpg" alt="..." /> -->
+              <div class="ph">Photo 2</div>
+              <figcaption>Caption</figcaption>
+            </figure>
+            <figure>
+              <!-- replace the .ph div with:
+                   <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Neural Electrode Fabricator" allowfullscreen></iframe> -->
+              <div class="video-wrap video-wrap--cell">
+                <div class="ph">Video — coming soon</div>
+              </div>
+              <figcaption>Caption</figcaption>
+            </figure>
+            <figure>
+              <!-- replace .ph with <img src="electrode-3.jpg" alt="..." /> -->
+              <div class="ph">Photo 3</div>
+              <figcaption>Caption</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROJECT 02 — INDUSTRIAL ROBOTIC ARM -->
+    <article class="project">
+      <div class="proj-header">
+        <span class="proj-num">02</span>
+        <h2>Industrial Robotic Arm <span class="tag-experimental">In Progress</span></h2>
+        <div class="proj-tags">
+          <span>ESP32-S3</span><span>NEMA 17</span><span>TMC2209</span><span>Planetary Gearbox</span><span>PlatformIO</span><span>LLM Control</span>
+        </div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-copy">
+          <p class="proj-lead">A six-axis stepper-driven arm you can command in plain English.</p>
+          <p>A natural-language instruction is converted to structured JSON by a language model on a small backend server, then handed to an ESP32-S3 that generates the real-time step pulses for six motors. Each joint is driven through a custom planetary reduction to gain the torque and resolution the direct-drive prototype below couldn't offer. Currently in the wiring, firmware, and gearbox-build phase.</p>
+          <div class="list-label">Key components</div>
+          <ul>
+            <li>ESP32-S3 real-time motion controller</li>
+            <li>6× NEMA 17 steppers with 6× TMC2209 drivers</li>
+            <li>Custom perfboard driver layout, 12 V motor supply</li>
+            <li>3-stage 64:1 planetary gearbox, 3D printed</li>
+            <li>Language model → JSON → motion pipeline (Python backend)</li>
+            <li>PlatformIO firmware</li>
+          </ul>
+        </div>
+        <div class="proj-media">
+          <!-- MAIN IMAGE: replace the .ph div with <img src="your-main-photo.jpg" alt="..." /> -->
+          <figure class="single-img">
+            <div class="ph ph--wide">Main photo — coming soon</div>
+            <figcaption>Full arm</figcaption>
+          </figure>
+          <div class="img-grid-2">
+            <figure>
+              <!-- replace .ph with <img src="photo-2.jpg" alt="..." /> -->
+              <div class="ph">Photo 2</div>
+              <figcaption>Caption</figcaption>
+            </figure>
+            <figure>
+              <!-- replace .ph with <img src="photo-3.jpg" alt="..." /> -->
+              <div class="ph">Photo 3</div>
+              <figcaption>Caption</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROJECT 03 — TELEOPERATED ROBOTIC MANIPULATOR -->
+    <article class="project">
+      <div class="proj-header">
+        <span class="proj-num">03</span>
+        <h2>Teleoperated Robotic Manipulator</h2>
         <div class="proj-tags">
           <span>Python</span><span>MediaPipe</span><span>Arduino</span><span>MG996R</span><span>SolidWorks</span><span>3D Print</span>
         </div>
@@ -76,7 +176,7 @@
         </div>
         <div class="proj-media">
           <div class="video-wrap">
-            <iframe src="https://www.youtube.com/embed/6DvgviJWuvk?si=ddYzoXrjakemX1uC" title="Robotic Manipulator" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/6DvgviJWuvk?si=ddYzoXrjakemX1uC" title="Teleoperated Robotic Manipulator" allowfullscreen></iframe>
           </div>
           <div class="img-grid-2">
             <figure>
@@ -88,96 +188,6 @@
               <figcaption>Links + electronics</figcaption>
             </figure>
           </div>
-        </div>
-      </div>
-    </article>
-
-    <!-- PROJECT 02 -->
-    <article class="project">
-      <div class="proj-header">
-        <span class="proj-num">02</span>
-        <h2>Computer Vision Tracking Turret</h2>
-        <div class="proj-tags">
-          <span>Python</span><span>Arduino</span><span>Servos</span><span>Tracking</span>
-        </div>
-      </div>
-      <div class="proj-body">
-        <div class="proj-copy">
-          <p class="proj-lead">A pan/tilt turret that locks onto a hand target in real time using camera-based vision.</p>
-          <p>Camera feed → Python processing → microcontroller actuation, with servo tuning to balance responsiveness against jitter. Simpler platform than the manipulator, but focused specifically on tracking performance and control latency.</p>
-          <ul>
-            <li>Vision-guided pan/tilt platform for live target following</li>
-            <li>Servo speed and update rate tuned to minimize oscillation</li>
-          </ul>
-        </div>
-        <div class="proj-media">
-          <div class="video-wrap">
-            <iframe src="https://www.youtube.com/embed/C-A8NP45xGM?si=2OrvbcbgDdqRWYQa" title="Tracking Turret" allowfullscreen></iframe>
-          </div>
-          <figure class="single-img">
-            <img src="Screenshot 2026-01-31 155727.png" alt="Vision tracking turret" />
-            <figcaption>Turret design</figcaption>
-          </figure>
-        </div>
-      </div>
-    </article>
-
-    <!-- PROJECT 03 -->
-    <article class="project">
-      <div class="proj-header">
-        <span class="proj-num">03</span>
-        <h2>CNC End Effector</h2>
-        <div class="proj-tags">
-          <span>SolidWorks</span><span>End Effector</span><span>Mechanisms</span>
-        </div>
-      </div>
-      <div class="proj-body">
-        <div class="proj-copy">
-          <p class="proj-lead">Custom end-effector designed for integration with an automated CNC system.</p>
-          <p>Focus on attachment geometry, mechanical packaging, and interface compatibility. Designed for manufacturability and repeatable motion, not as an isolated part but as a functional component within a larger system.</p>
-          <ul>
-            <li>SolidWorks modeling with practical system integration constraints</li>
-            <li>Manufacturable geometry, designed for controlled motion output</li>
-          </ul>
-        </div>
-        <div class="proj-media">
-          <div class="video-wrap">
-            <iframe src="https://www.youtube.com/embed/F1C1ZO1pY7s?si=6pR2FPgF3_p6AUTk" title="CNC End Effector" allowfullscreen></iframe>
-          </div>
-          <figure class="single-img">
-            <img src="IMG_1528 2.jpeg" alt="Cardboard prototype" />
-            <figcaption>Cardboard prototype</figcaption>
-          </figure>
-        </div>
-      </div>
-    </article>
-
-    <!-- PROJECT 04 -->
-    <article class="project">
-      <div class="proj-header">
-        <span class="proj-num">04</span>
-        <h2>Hand-Crank Generator <span class="tag-experimental">Experimental</span></h2>
-        <div class="proj-tags">
-          <span>Electromechanical</span><span>Prototyping</span>
-        </div>
-      </div>
-      <div class="proj-body">
-        <div class="proj-copy">
-          <p class="proj-lead">Manual energy generation prototype exploring mechanical-to-electrical conversion.</p>
-          <p>Hand-driven crank connected to a generator. Testing revealed the generator requires far greater RPM than direct hand cranking can provide — gearing is essential for any viable power output. A clear, documented failure with identified solution path.</p>
-          <ul>
-            <li>Built and tested manual crank-driven generator</li>
-            <li>Identified mechanical advantage as critical missing component</li>
-          </ul>
-        </div>
-        <div class="proj-media">
-          <div class="video-wrap">
-            <iframe src="https://www.youtube.com/embed/7chSDxdoLrg?si=f31eDKjlDZyDhXYx" title="Hand Crank Generator" allowfullscreen></iframe>
-          </div>
-          <figure class="single-img">
-            <img src="IMG_3404.jpeg" alt="System assembly" />
-            <figcaption>System assembly</figcaption>
-          </figure>
         </div>
       </div>
     </article>
