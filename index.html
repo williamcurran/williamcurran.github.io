@@ -61,14 +61,14 @@
         <span class="proj-num">01</span>
         <h2>Neural Electrode Fabricator</h2>
         <div class="proj-tags">
-          <span>Arduino Mega</span><span>Laser</span><span>Motion Control</span><span>Python</span><span>Data Logging</span><span>Microscopy</span><span>Neurotech</span>
+          <span>Arduino Mega</span><span>Laser</span><span>Motion Control</span><span>Python</span><span>Data Logging</span><span>Microscopy</span>
         </div>
       </div>
       <div class="proj-body">
         <div class="proj-copy">
-          <p class="proj-lead">A precision laser rig for preparing neural microelectrodes, with built-in data collection for testing how different motions affect the wire.</p>
-          <p>Neural interfaces depend on extremely fine conductive filaments — multiple material types, each under 20 µm in diameter. This rig holds a filament on a motorized linear stage and processes it with a PWM-controlled laser. It can cut the tip to a very sharp point and strip the insulation to a set length without damaging the conductor underneath.</p>
-          <p>Every run is logged automatically to CSV, and the firmware is built so that any motion profile — speed in mm/s, power as a percentage, single or dual pass — takes only a short command to run. That makes it quick to test a motion and see exactly how it affects the wire.</p>
+          <p class="proj-lead">A precision laser rig for processing microelectrode wire, with built-in data collection for testing how different motions affect the wire.</p>
+          <p>The rig works with extremely fine wires — multiple material types, each under 20 µm in diameter — of the kind used to build neural microelectrodes. A wire is held on a motorized linear stage and processed with a PWM-controlled laser. It can cut the tip to a very sharp point and strip the insulation to a set length without damaging the conductor underneath.</p>
+          <p>All testing is done on the wires themselves. Every run is logged automatically to CSV, and any motion profile — speed in mm/s, power as a percentage, single or dual pass — takes only a short command to run, so it is quick to test a motion and see how it affects the wire.</p>
           <div class="list-label">Key components</div>
           <ul>
             <li>Arduino Mega controller</li>
@@ -76,7 +76,7 @@
             <li>450 nm PWM-controlled diode laser module</li>
             <li>Custom firmware for easy motion and power testing</li>
             <li>Python serial logger for automatic CSV data collection</li>
-            <li>Microscope for imaging and inspection</li>
+            <li>Microscope for wire imaging and inspection</li>
           </ul>
         </div>
         <div class="proj-media">
@@ -116,21 +116,20 @@
         <span class="proj-num">02</span>
         <h2>Industrial Robotic Arm <span class="tag-experimental">In Progress</span></h2>
         <div class="proj-tags">
-          <span>ESP32-S3</span><span>NEMA 17</span><span>TMC2209</span><span>Planetary Gearbox</span><span>PlatformIO</span><span>LLM Control</span>
+          <span>ESP32-S3</span><span>NEMA 17</span><span>TMC2209</span><span>Planetary Gearbox</span><span>PlatformIO</span><span>Motion Control</span>
         </div>
       </div>
       <div class="proj-body">
         <div class="proj-copy">
-          <p class="proj-lead">A six-axis stepper-driven arm you can command in plain English.</p>
-          <p>A natural-language instruction is converted to structured JSON by a language model on a small backend server, then handed to an ESP32-S3 that generates the real-time step pulses for six motors. Each joint is driven through a custom planetary reduction to gain the torque and resolution the direct-drive prototype below couldn't offer. Currently in the wiring, firmware, and gearbox-build phase.</p>
+          <p class="proj-lead">A six-axis stepper-driven arm built for brute strength and repeatable motion.</p>
+          <p>Six NEMA 17 steppers, each driven through a custom 64:1 three-stage planetary gearbox, give every joint high torque and fine positional resolution — the strength the direct-drive prototype below couldn't offer. Stepper-based motion returns to the same positions run after run, and an ESP32-S3 generates the step pulses for all six axes in real time. The mechanical and electrical builds are complete; the software is what I'm developing now.</p>
           <div class="list-label">Key components</div>
           <ul>
             <li>ESP32-S3 real-time motion controller</li>
             <li>6× NEMA 17 steppers with 6× TMC2209 drivers</li>
-            <li>Custom perfboard driver layout, 12 V motor supply</li>
             <li>3-stage 64:1 planetary gearbox, 3D printed</li>
-            <li>Language model → JSON → motion pipeline (Python backend)</li>
-            <li>PlatformIO firmware</li>
+            <li>Custom perfboard driver layout, 12 V motor supply</li>
+            <li>PlatformIO firmware (in development)</li>
           </ul>
         </div>
         <div class="proj-media">
