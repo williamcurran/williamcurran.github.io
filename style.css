@@ -410,6 +410,18 @@ h1 {
   color: var(--accent);
 }
 
+.list-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 22px;
+}
+
+.list-label + ul {
+  margin-top: 8px;
+}
+
 /* ---- MEDIA ---- */
 .proj-media {
   display: flex;
@@ -433,13 +445,20 @@ h1 {
   height: 100%;
 }
 
-.img-grid-2 {
+/* video sized to match a 4:3 grid cell */
+.video-wrap--cell {
+  aspect-ratio: 4 / 3;
+}
+
+.img-grid-2,
+.img-grid-4 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
 
 .img-grid-2 figure,
+.img-grid-4 figure,
 .single-img {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -447,6 +466,7 @@ h1 {
 }
 
 .img-grid-2 figure img,
+.img-grid-4 figure img,
 .single-img img {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -460,11 +480,13 @@ h1 {
 }
 
 .img-grid-2 figure:hover img,
+.img-grid-4 figure:hover img,
 .single-img:hover img {
   filter: grayscale(0%);
 }
 
 .img-grid-2 figcaption,
+.img-grid-4 figcaption,
 .single-img figcaption {
   font-size: 0.72rem;
   letter-spacing: 0.1em;
@@ -472,6 +494,35 @@ h1 {
   color: var(--text-dim);
   padding: 8px 10px;
   border-top: 1px solid var(--border);
+}
+
+/* ---- PLACEHOLDERS (swap for <img> / <iframe> when ready) ---- */
+.ph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background:
+    repeating-linear-gradient(45deg, transparent 0 10px, rgba(0,220,180,0.04) 10px 11px),
+    var(--bg3);
+  border: 1px dashed var(--border-strong);
+  color: var(--text-dim);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px;
+}
+
+.ph--wide { aspect-ratio: 16 / 9; }
+
+.video-wrap .ph {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  aspect-ratio: auto;
+  border: 0;
 }
 
 /* ---- SKILLS ---- */
@@ -609,6 +660,7 @@ footer {
   .img-grid-2 {
     grid-template-columns: 1fr;
   }
+  /* the 2x2 electrode grid stays 2x2 so the video keeps its bottom-left slot */
   .hero-stats {
     width: 100%;
   }
